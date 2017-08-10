@@ -7,8 +7,7 @@ def is_valid(my_list, idx):
         return False
     elif length < 0:
         return False
-    else:
-        return True
+    return True
 
 
 def delete_at(my_list=[], idx=0):
