@@ -11,7 +11,6 @@ def is_valid(my_list, idx):
 
 
 def delete_at(my_list=[], idx=0):
-    if my_list:
-        if is_valid(my_list, idx):
-            del my_list[idx]
-        return my_list
+    if is_valid(my_list, idx):
+        del my_list[idx]
+    return my_list
