@@ -5,12 +5,13 @@ def is_valid(my_list, idx):
         return False
     elif length <= idx:
         return False
-    elif length < 0:
+    elif idx < 0:
         return False
     return True
 
 
 def delete_at(my_list=[], idx=0):
-    if is_valid(my_list, idx):
-        del my_list[idx]
-    return my_list
+    if my_list:
+        if is_valid(my_list, idx):
+            del my_list[idx]
+        return my_list
