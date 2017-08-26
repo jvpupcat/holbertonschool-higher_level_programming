@@ -1,0 +1,29 @@
+Import:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Add integers:
+    >>> add_integer(1, 2)
+    3
+
+    >>> add_integer(100, -2)
+    98
+
+    >>> add_integer(100.3, -2)
+    98
+
+Add integer, non-integer:
+    >>> add_integer(4, "School")
+    Traceback (most recent call last):
+        ...
+    b is not an integer
+
+    >>> add_integer(True, 1)
+    Traceback (most recent call last):
+        ...
+    a is not an integer
+
+    >>> add_integer(1, True)
+    Traceback (most recent call last):
+        ...
+    b is not an integer
