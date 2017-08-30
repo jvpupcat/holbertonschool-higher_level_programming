@@ -35,3 +35,8 @@ Error check:
     Traceback (most recent call last):
         ...
     TypeError: size must be an integer
+
+    >>> print_square() #doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+        ...
+    TypeError:
