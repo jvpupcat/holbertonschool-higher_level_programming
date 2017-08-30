@@ -27,3 +27,18 @@ Add integer, non-integer:
     Traceback (most recent call last):
         ...
     TypeError: b must be an integer
+
+    >>> add_integer(float('inf'), float('inf')) #doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+        ...
+    OverflowError:
+
+    >>> add_integer(float('inf'), 0) #doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+        ...
+    OverflowError:
+
+    >>> add_integer(0, float('inf')) #doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+        ...
+    OverflowError:
