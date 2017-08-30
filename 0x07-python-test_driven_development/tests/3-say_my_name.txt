@@ -20,3 +20,8 @@ say_my_name edge cases:
     Traceback (most recent call last):
         ...
     TypeError: first_name must be a string
+
+    >>> say_my_name() #doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+        ...
+    TypeError: 
