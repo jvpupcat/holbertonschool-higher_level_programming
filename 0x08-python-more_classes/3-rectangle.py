@@ -39,7 +39,7 @@ class Rectangle:
 
     def perimeter(self):
         return (2 * (int(self.__width) + int(self.__height)))
- 
+
     def __str__(self):
         emp_string = ""
         ret_string = (('#' * self.__width + '\n') * self.__height)
