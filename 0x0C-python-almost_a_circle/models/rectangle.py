@@ -76,15 +76,25 @@ class Rectangle(Base):
         e = self.__height
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(a, b, c, d, e))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         if len(args) == 5:    
-            self.__y = args[4]
+            self.y = args[4]
         if len(args) >= 4:
-            self.__x = args[3]
+            self.x = args[3]
         if len(args) >= 3:
-            self.__height = args[2]
+            self.height = args[2]
         if len(args) >= 2:
-            self.__width = args[1]
+            self.width = args[1]
         if len(args) >= 1:
             self.id = args[0]
+        if 'id' in kwargs:
+            self.id = kwargs['y']
+        if 'height' in kwargs:
+            self.height = kwargs['height']
+        if 'width' in kwargs:
+            self.width = kwargs['width']
+        if 'y' in kwargs:
+            self.y = kwargs['y']
+        if 'x' in kwargs:
+            self.x = kwargs['x']
         return (self)
