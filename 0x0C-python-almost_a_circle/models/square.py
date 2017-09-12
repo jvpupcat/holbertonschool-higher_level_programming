@@ -40,3 +40,11 @@ class Square(Rectangle):
             self.y = kwargs['y']
         if 'size' in kwargs:
             self.width = kwargs['size']
+
+    def to_dictionary(self):
+        my_dict = {}
+        my_dict["id"] = self.id
+        my_dict["size"] = self.width
+        my_dict["x"] = self.x
+        my_dict["y"] = self.y
+        return my_dict
