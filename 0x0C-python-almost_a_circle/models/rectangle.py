@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """class Rectangle"""
-
-
 from models.base import Base
+
+
 class Rectangle(Base):
     """initialize rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -11,13 +11,15 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super(Rectangle, self).__init__(id)
-
+    
     @property
+    """getter and setter for width"""
     def width(self):
         return self.__width
 
     @width.setter
     def width(self, value):
+        """raise TypeError if not int and ValueError is < 0"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
@@ -25,11 +27,13 @@ class Rectangle(Base):
         self.__width = value
 
     @property
+    """getter and setter for height"""
     def height(self):
         return self.__height
 
     @height.setter
     def height(self, value):
+        """raise TypeError if not int and ValueError if < 0"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
@@ -37,6 +41,7 @@ class Rectangle(Base):
         self.__height = value
 
     @property
+    """getter and setter for x"""
     def x(self):
         return self.__x
 
@@ -49,6 +54,7 @@ class Rectangle(Base):
         self.__x = value
 
     @property
+    """getter and setter for y"""
     def y(self):
         return self.__y
 
@@ -61,14 +67,17 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """returns the area of rectangle"""
         return int(self.__width) * int(self.__height)
 
     def display(self):
+        """displays the hash table"""
         print('\n' * self.__y, end="")
         for i in range(self.__height):
             print((' ' * self.__x) + ('#' * self.__width))
 
     def __str__(self):
+        """returns a string"""
         a = self.id
         b = self.__x
         c = self.__y
@@ -77,6 +86,7 @@ class Rectangle(Base):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(a, b, c, d, e))
 
     def update(self, *args, **kwargs):
+        """returns key and value"""
         if len(args) == 5:    
             self.y = args[4]
         if len(args) >= 4:
@@ -100,6 +110,7 @@ class Rectangle(Base):
         return (self)
 
     def to_dictionary(self):
+        """create dictionary"""
         my_dict = {}
         my_dict["id"] = self.id
         my_dict["width"] = self.width
