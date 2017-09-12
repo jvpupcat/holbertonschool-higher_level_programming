@@ -11,7 +11,7 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
-    
+
     @property
     def width(self):
         """getter and setter for width"""
@@ -87,7 +87,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """returns key and value"""
-        if len(args) == 5:    
+        if len(args) == 5:
             self.y = args[4]
         if len(args) >= 4:
             self.x = args[3]
