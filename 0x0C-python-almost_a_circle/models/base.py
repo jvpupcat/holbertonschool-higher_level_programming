@@ -8,9 +8,9 @@ class Base:
 
     def __init__(self, id=None):
         if id is not None:
-            """assign the public instance attribute id to this argument value"""
+            """assign the public instance attribute id"""
             self.id = id
         else:
             """increment and assign value to public instance attribute id"""
             Base.__nb_objects += 1
-            self.id = self.__nb_objects 
+            self.id = self.__nb_objects
