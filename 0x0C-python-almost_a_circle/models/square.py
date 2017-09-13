@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """class square that inherits from Rectangle"""
-
-
 from models.rectangle import Rectangle
 
 
@@ -34,11 +32,11 @@ class Square(Rectangle):
             for i, args in enumerate(args):
                 if i == 0:
                     self.id = args
-                if i == 1:
+                elif i == 1:
                     self.size = args
-                if i == 2:
+                elif i == 2:
                     self.x = args
-                if i == 3:
+                elif i == 3:
                     self.y = args
         else:
             if 'id' in kwargs:
