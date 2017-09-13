@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """first class Base"""
+import json
 
 
 class Base:
@@ -14,3 +15,8 @@ class Base:
             """increment and assign value to public instance attribute id"""
             Base.__nb_objects += 1
             self.id = self.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        if list_dictionaries is None:
+            return ("[]")
+        return (json.dumps(list_dictionaries))
