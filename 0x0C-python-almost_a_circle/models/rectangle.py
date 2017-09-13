@@ -99,18 +99,18 @@ class Rectangle(Base):
                     self.width = args
                 elif i == 0:
                     self.id = args
-            else:
-                if 'id' in kwargs:
+        else:
+            if 'id' in kwargs:
                     self.id = kwargs['id']
-                if 'height' in kwargs:
+            if 'height' in kwargs:
                     self.height = kwargs['height']
-                if 'width' in kwargs:
+            if 'width' in kwargs:
                     self.width = kwargs['width']
-                if 'y' in kwargs:
+            if 'y' in kwargs:
                     self.y = kwargs['y']
-                if 'x' in kwargs:
+            if 'x' in kwargs:
                     self.x = kwargs['x']
-                return (self)
+            return (self)
 
     def to_dictionary(self):
         """create dictionary"""
