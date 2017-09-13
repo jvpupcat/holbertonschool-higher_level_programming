@@ -27,8 +27,13 @@ class Base:
     def save_to_file(cls, list_objs):
         """JSON string to file"""
         js = []
+        js1 = []
         for obj in list_objs:
             js.append(obj.to_dictionary())
-        js = Base.to_json_string(js)
+        js1 = Base.to_json_string(js)
         with open("{}.json".format(cls.__name__), 'w') as jsfile:
-            jsfile.write(js)
+            jsfile.write(js1)
+
+    @staticmethod
+    def from_json_string(json_string):
+        
