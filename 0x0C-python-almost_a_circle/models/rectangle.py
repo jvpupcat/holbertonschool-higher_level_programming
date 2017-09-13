@@ -87,27 +87,30 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """returns key and value"""
-        if len(args) == 5:
-            self.y = args[4]
-        if len(args) >= 4:
-            self.x = args[3]
-        if len(args) >= 3:
-            self.height = args[2]
-        if len(args) >= 2:
-            self.width = args[1]
-        if len(args) >= 1:
-            self.id = args[0]
-        if 'id' in kwargs:
-            self.id = kwargs['y']
-        if 'height' in kwargs:
-            self.height = kwargs['height']
-        if 'width' in kwargs:
-            self.width = kwargs['width']
-        if 'y' in kwargs:
-            self.y = kwargs['y']
-        if 'x' in kwargs:
-            self.x = kwargs['x']
-        return (self)
+        if len(args):
+            for i, args in enumerate(args):
+                if i == 4:
+                    self.y = args
+                elif i == 3:
+                    self.x = args
+                elif i == 2:
+                    self.height = args
+                elif i == 1:
+                    self.width = args
+                elif i == 0:
+                    self.id = args
+            else:
+                if 'id' in kwargs:
+                    self.id = kwargs['id']
+                if 'height' in kwargs:
+                    self.height = kwargs['height']
+                if 'width' in kwargs:
+                    self.width = kwargs['width']
+                if 'y' in kwargs:
+                    self.y = kwargs['y']
+                if 'x' in kwargs:
+                    self.x = kwargs['x']
+                return (self)
 
     def to_dictionary(self):
         """create dictionary"""
