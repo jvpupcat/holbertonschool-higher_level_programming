@@ -49,6 +49,7 @@ class Square(Rectangle):
                 self.size = kwargs['size']
 
     def to_dictionary(self):
+        """creates my_dict"""
         my_dict = {}
         my_dict["id"] = self.id
         my_dict["size"] = self.size
