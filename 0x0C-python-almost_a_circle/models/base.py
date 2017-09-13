@@ -22,3 +22,13 @@ class Base:
         if list_dictionaries is None:
             return ("[]")
         return (json.dumps(list_dictionaries))
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """JSON string to file"""
+        js = []
+        for obj in list_objs:
+            js.append(obj.to_dictionary())
+        js = Base.to_json_string(js)
+        with open("{}.json".format(cls.__name__), 'w') as jsfile:
+            jsfile.write(js)
