@@ -114,10 +114,6 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """create dictionary"""
-        my_dict = {}
-        my_dict["id"] = self.id
-        my_dict["width"] = self.width
-        my_dict["height"] = self.height
-        my_dict["x"] = self.x
-        my_dict["y"] = self.y
+        my_dict = {'id': self.id, 'width': self.width,
+                   'x': self.x, 'y': self.y, 'height': self.height}
         return my_dict
