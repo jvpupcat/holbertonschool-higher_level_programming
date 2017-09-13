@@ -33,7 +33,3 @@ class Base:
         js1 = Base.to_json_string(js)
         with open("{}.json".format(cls.__name__), 'w') as jsfile:
             jsfile.write(js1)
-
-    @staticmethod
-    def from_json_string(json_string):
-        
