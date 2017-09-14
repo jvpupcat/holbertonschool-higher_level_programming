@@ -33,3 +33,11 @@ class Base:
         js1 = cls.to_json_string(js)
         with open("{}.json".format(cls.__name__), 'w') as jsfile:
             jsfile.write(js1)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string"""
+        if json_string is None:
+            return ([])
+        else:
+            return (json.loads(json_string))
