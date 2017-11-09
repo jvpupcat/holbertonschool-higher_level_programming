@@ -16,7 +16,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    a_state = session.query(State).filter(State.name.like('%a%')).order_by(State.id)
-    if a_state:
-        print("{}: {}".format(a_state.id, a_state.name))
+    a_state = session.query(State).filter(State.name.op('REGEXP')
+                                          ('a')).order_by(State.id)
+    for state in a_state:
+        print("{0.id}: {0.name}".format(state))
     session.close()
