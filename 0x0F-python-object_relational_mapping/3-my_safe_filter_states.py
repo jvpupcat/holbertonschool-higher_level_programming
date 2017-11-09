@@ -9,8 +9,8 @@ if __name__ == "__main__":
     arg4 = sys.argv[4]
     cur.execute("SELECT  id, name\
                 FROM states\
-                WHERE name = '{:s}'\
-                ORDER BY states.id ASC".format(arg4,))
+                WHERE name LIKE %s\
+                ORDER BY states.id ASC", (arg4,))
     query = cur.fetchall()
     for row in query:
         print(row)
