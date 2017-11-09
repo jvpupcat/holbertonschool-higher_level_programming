@@ -11,7 +11,7 @@ if __name__ == "__main__":
     cur.execute("SELECT  id, name\
                 FROM states\
                 WHERE name LIKE %s\
-                ORDER BY states.id ASC", (arg4,))
+                ORDER BY states.id ASC".format(arg4,))
     query = cur.fetchall()
     for row in query:
         print(row)
