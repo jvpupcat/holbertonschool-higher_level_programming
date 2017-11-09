@@ -10,7 +10,7 @@ if __name__ == "__main__":
     arg4 = sys.argv[4]
     cur.execute("SELECT  id, name\
                 FROM states\
-                WHERE name = %s\
+                WHERE name = '{:s}'\
                 ORDER BY states.id ASC".format(arg4,))
     query = cur.fetchall()
     for row in query:
