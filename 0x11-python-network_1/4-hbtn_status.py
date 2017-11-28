@@ -10,4 +10,4 @@ if __name__ == "__main__":
     display = type(req.text)
     print("Body response:")
     print("\t- type:", display)
-    print("\t- utf8 content:", req.text)
+    print("\t- content:", req.text)
