@@ -8,8 +8,16 @@ a parameter, and displays the body of the response
 
 if __name__ == "__main__":
     import urllib.request
+    import urllib.parse
     import sys
     url = sys.argv[1]
-    email = {'Your email is': sys.argv[2]}
-    display = urllib.request.urlopen(url, data=json.dumps(email))
-    print(display)
+    data = {}
+    data['email'] = sys.argv[2]
+    value = urllib.parse.urlencode(data)
+    value = value.encode('ascii')
+
+    req = urllib.request.Request(url, value)
+    with urllib.request.urlopen(req) as response:
+        read = response.read()
+        decode = read.decode('utf8')
+    print(decode)
