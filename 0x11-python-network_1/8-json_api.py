@@ -13,7 +13,7 @@ if __name__ == "__main__":
         value = sys.argv[1]
     except:
         value = ""
-    req = requests.post('http://172.31.54.208:36717/search_user', data = {'q': value})
+    req = requests.post('http://0.0.0.0:5000', data={'q': value})
     try:
         results = req.json()
         if not results:
