@@ -16,17 +16,13 @@ const Rectangle = class {
     }
   }
   rotate () {
-    let twoxh = 2 * this.height;
-    let twoxw = 2 * this.width;
-    for (let j = 0; j < twoxw; j++) {
-      console.log('X'.repeat(twoxh))
-    }
+    let swap = this.height;
+    this.height = this.width;
+    this.width = swap;
   }
   double () {
-    let twoxh = 2 * this.height;
-    let twoxw = 2 * this.width;
-    for (let k = 0; k < twoxh; k++)
-      console.log('X'.repeat(twoxw))
+    this.height = this.height * 2;
+    this.width = this.width * 2;
   }
 };
 const rectangle = Rectangle;
