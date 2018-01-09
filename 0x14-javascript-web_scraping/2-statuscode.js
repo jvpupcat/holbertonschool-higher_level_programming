@@ -1,14 +1,9 @@
 #!/usr/bin/node
-ajaxSetup({
-  type: "GET",
-  dataType: "jsonp",
-  error: function(xhr) {
-    if (xhr.status == "200") {
-      alert("code: " + xhr.status);
-    } else if (xhr.status == "404") {
-      alert("code: " + xhr.status);
-    } else {
-      console.log("")
-    }
+const arg = process.argv[2];
+const request = require('request');
+request(arg, function (error, response, body) {
+  if (error) {
+    console.log(error);
   }
+  console.log('code: ' + response.statusCode);
 });
