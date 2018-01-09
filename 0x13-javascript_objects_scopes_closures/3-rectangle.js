@@ -10,8 +10,10 @@ const Rectangle = class {
     this.width = w;
     this.height = h;
   }
-  for (i = 0; i < w; i++) {
-    console.log('X'.repeat(w));
+  print () {
+    for (let i = 0; i < this.height; i++) {
+      console.log('X'.repeat(this.width));
+    }
   }
 };
 const rectangle = Rectangle;
