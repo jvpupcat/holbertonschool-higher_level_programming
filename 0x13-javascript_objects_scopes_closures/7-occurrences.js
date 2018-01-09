@@ -1,26 +1,10 @@
 #!/usr/bin/node
-const Rectangle = require('./5-square');
-class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
-  }
-  charPrint (c) {
-    if (c === undefined || c === '') {
-      super.print();
-    } else {
-      for (let i = 0; i < this.height; i++) {
-        console.log(c.repeat(this.width));
-      }
+module.exports.nbOccurences = function (list, searchElement) {
+  let count = 0;
+  for (let i = 0; i <= list; i++) {
+    if (searchElement === list[i]) {
+      count += 1;
     }
-  }
-  exports.nbOccurences = function (list, searchElement) {
-    for (let i = 0; i <= list; i++) {
-      if (searchElement === list[i]) {
-        let count += 1;
-        print(count);
-      }
-    }
-  }
+  };
+  return count;
 }
-const square = Square;
-module.exports = square;
