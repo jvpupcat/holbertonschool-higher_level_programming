@@ -1,4 +1,4 @@
-$(function (){
+$(document).ready(function (){
 
   var $list_movies = $('#list_movies');
 
@@ -7,9 +7,10 @@ $(function (){
     dataType: 'json',
     url: 'https://swapi.co/api/films/?format=json',
     success: function(data) {
-      $.each(data), function(i, item) {
-        $data.append('<li>item.title</li>');
+      const results = data.results;
+      $.each(results, function(i, item) {
+        $list_movies.append('<li>' + item.title + '</li>');
       }
-    }
-  })
+    });
+  });
 });
